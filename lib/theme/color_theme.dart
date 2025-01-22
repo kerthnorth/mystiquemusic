@@ -18,7 +18,7 @@ class ColorTheme {
   static const Color primaryText =
       Colors.white; // White for text on dark backgrounds
   static const Color secondaryText =
-      Color(0xFFB0B0B0); // Light gray for secondary text
+      Colors.white; // Light gray for secondary text
 
   // Gradient
   static const LinearGradient backgroundGradient = LinearGradient(
