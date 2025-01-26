@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mystiquemusic/screens/Library_screen.dart';
 import 'package:mystiquemusic/screens/player_screen.dart';
 import 'package:mystiquemusic/screens/Playlists_screen.dart';
 
@@ -39,7 +40,8 @@ class _HomeScreenState extends State<HomeScreen> {
           const end = Offset.zero;
           const curve = Curves.easeInOut;
 
-          var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+          var tween =
+              Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
           var offsetAnimation = animation.drive(tween);
 
           return SlideTransition(position: offsetAnimation, child: child);
@@ -73,6 +75,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => PlaylistsScreen()),
+                );
+              },
+            ),
+            const SizedBox(height: 16),
+            ListTile(
+              leading: const Icon(Icons.library_music),
+              title: const Text('Library'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LibraryScreen()),
                 );
               },
             ),
